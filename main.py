@@ -7,9 +7,6 @@ def calc_year_code(year):
     return last_result
 
 def is_year_leap(year):
-    #
-    # Tu código del LAB anterior.
-    #
     if year < 1852:
         return False
     
@@ -21,9 +18,6 @@ def is_year_leap(year):
         return False
 
 def days_in_month(year, month):
-    #
-    # Tu código del LAB anterior.
-    #
     if not isinstance(year, int) or not isinstance(month, int):
         return None
     
@@ -35,13 +29,10 @@ def days_in_month(year, month):
     return month_days[month - 1]
 
 def day_of_year(year, month, day):
-    #
-    # Escribe tu código nuevo aquí.
-    #
     if not isinstance(year, int) or not isinstance(month, int) or not isinstance(day, int) or year < 1000:
         return None
     
-    weak_days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+    weakdays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
     month_codes = [6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
     year_leap = is_year_leap(year)
     
@@ -58,6 +49,6 @@ def day_of_year(year, month, day):
     if result_code > 7:
         result_code -= 7
     
-    return weak_days[result_code]
+    return weakdays[result_code]
 
 print(day_of_year(2023, 1, 12))
